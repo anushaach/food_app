@@ -32,19 +32,21 @@ class FirstPage extends StatelessWidget {
               ),
             ),
             Center(
-                child: IconButton(
-              onPressed: () {
-                Navigator.push(
+              child: IconButton(
+                onPressed: () {
+                  Navigator.push(
                     context,
                     MaterialPageRoute(
                       builder: (context) => Splashscreen(),
-                    ));
-              },
-              icon: Image.asset(
-                'images/1.png',
+                    ),
+                  );
+                },
+                icon: Image.asset(
+                  'images/1.png',
+                ),
+                iconSize: 300,
               ),
-              iconSize: 300,
-            )),
+            ),
             Center(
               child: Padding(
                 padding: const EdgeInsets.only(left: 220, top: 90),
@@ -53,8 +55,9 @@ class FirstPage extends StatelessWidget {
                   width: 300,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(90),
-                        bottomLeft: Radius.circular(8)),
+                      topLeft: Radius.circular(90),
+                      bottomLeft: Radius.circular(8),
+                    ),
                     color: Color.fromARGB(255, 114, 231, 229),
                     // color: Colors.amber,
                   ),

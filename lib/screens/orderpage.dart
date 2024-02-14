@@ -220,7 +220,7 @@ class Orderpage extends StatelessWidget {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => payment(),
+                        builder: (context) => Payment(),
                       ));
                 },
                 style: ElevatedButton.styleFrom(
@@ -228,7 +228,7 @@ class Orderpage extends StatelessWidget {
                     shape: BeveledRectangleBorder(
                         borderRadius: BorderRadius.circular(7))),
                 child: Text(
-                  "Order",
+                  "Check Out",
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
               ),
