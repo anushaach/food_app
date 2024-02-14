@@ -435,10 +435,11 @@ class Homepage extends StatelessWidget {
                         TextButton(
                           onPressed: () {
                             Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => FoodSelect(),
-                                ));
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => FoodSelect(),
+                              ),
+                            );
                           },
                           child: Padding(
                             padding: const EdgeInsets.only(left: 10),
@@ -487,10 +488,11 @@ class Homepage extends StatelessWidget {
                           TextButton(
                             onPressed: () {
                               Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => FoodSelect(),
-                                  ));
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => FoodSelect(),
+                                ),
+                              );
                             },
                             child: Padding(
                               padding: const EdgeInsets.only(left: 10),
