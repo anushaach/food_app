@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:food_app/screens/Paymentpage.dart';
-import 'package:food_app/screens/homepage.dart';
 import 'package:food_app/screens/splash_screen.dart';
 
-class Orderpage extends StatelessWidget {
+class Orderpage extends StatefulWidget {
   const Orderpage({super.key});
 
+  @override
+  State<Orderpage> createState() => _OrderpageState();
+}
+
+class _OrderpageState extends State<Orderpage> {
+  var count = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -142,28 +147,28 @@ class Orderpage extends StatelessWidget {
                   ),
                 ),
               ),
-              // DropdownButton(
-              //   items: [
-              //     DropdownMenuItem(
-              //       value: 'item1',
-              //       child: Text('Item 1'),
-              //     ),
-              //     DropdownMenuItem(
-              //       value: 'item2',
-              //       child: Text('Item 2'),
-              //     ),
-              //   ],
-              //   onChanged: (selectedItem) {
-              //     print('Selected item: $selectedItem');
-              //   },
-              // )
-              IconButton(
-                onPressed: () {},
-                icon: Icon(
-                  Icons.arrow_downward,
-                  color: Colors.white,
-                ),
+              DropdownButton(
+                items: [
+                  DropdownMenuItem(
+                    value: 'item1',
+                    child: Text('Item 1'),
+                  ),
+                  DropdownMenuItem(
+                    value: 'item2',
+                    child: Text('Item 2'),
+                  ),
+                ],
+                onChanged: (selectedItem) {
+                  print('Selected item: $selectedItem');
+                },
               ),
+              // IconButton(
+              //   onPressed: () {},
+              //   icon: Icon(
+              //     Icons.arrow_downward,
+              //     color: Colors.white,
+              //   ),
+              // ),
             ]),
           ),
         ),
@@ -197,9 +202,10 @@ class Orderpage extends StatelessWidget {
               Text(
                 "Total",
                 style: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 17),
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 17,
+                ),
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 250),
@@ -244,8 +250,9 @@ class Orderpage extends StatelessWidget {
               onPressed: () => showDialog<String>(
                 context: context,
                 builder: (BuildContext context) => AlertDialog(
-                  title: const Text('Are your want to log out'),
-                  content: const Text('If you click Ok then oder is not added'),
+                  title: const Text('Are your sure want to log out'),
+                  content:
+                      const Text('If you click Ok then order is not added'),
                   actions: <Widget>[
                     TextButton(
                       onPressed: () => Navigator.pop(context, 'Cancel'),

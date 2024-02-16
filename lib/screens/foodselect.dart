@@ -276,7 +276,7 @@ class FoodSelect extends StatelessWidget {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => CheckOut(),
+                        builder: (context) => Checkoutpage(),
                       ));
                 },
                 style: ElevatedButton.styleFrom(
@@ -292,27 +292,27 @@ class FoodSelect extends StatelessWidget {
             SizedBox(
               width: 80,
             ),
-            Container(
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: Color.fromARGB(255, 181, 234, 233)),
-                // color: Colors.amber,
-                child: Row(
-                  children: [
-                    IconButton(
-                        onPressed: () {},
-                        icon: Icon(
-                          Icons.add,
-                          color: Colors.black,
-                        )),
-                    IconButton(
-                        onPressed: () {},
-                        icon: Icon(
-                          Icons.remove,
-                          color: Colors.black,
-                        )),
-                  ],
-                ))
+            // Container(
+            //     decoration: BoxDecoration(
+            //         borderRadius: BorderRadius.circular(10),
+            //         color: Color.fromARGB(255, 181, 234, 233)),
+            //     // color: Colors.amber,
+            //     child: Row(
+            //       children: [
+            //         IconButton(
+            //             onPressed: () {},
+            //             icon: Icon(
+            //               Icons.add,
+            //               color: Colors.black,
+            //             )),
+            //         IconButton(
+            //             onPressed: () {},
+            //             icon: Icon(
+            //               Icons.remove,
+            //               color: Colors.black,
+            //             )),
+            //       ],
+            //     ))
           ],
         )
       ]),

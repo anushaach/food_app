@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:food_app/screens/orderpage.dart';
 
-class CheckOut extends StatelessWidget {
-  const CheckOut({super.key});
+class Checkoutpage extends StatefulWidget {
+  const Checkoutpage({super.key});
 
+  @override
+  State<Checkoutpage> createState() => _CheckoutpageState();
+}
+
+class _CheckoutpageState extends State<Checkoutpage> {
+  var count = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -175,16 +181,36 @@ class CheckOut extends StatelessWidget {
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 50, top: 18),
-              child: ElevatedButton(
-                  onPressed: () {},
+            Row(
+              children: [
+                ElevatedButton(
+                  onPressed: () {
+                    setState(() {
+                      count++;
+                    });
+                  },
                   style: ElevatedButton.styleFrom(
                       backgroundColor: Color.fromARGB(255, 165, 237, 233)),
-                  child: Text(
-                    "Add",
-                    style: TextStyle(color: Colors.black),
-                  )),
+                  child: Icon(Icons.add),
+                ),
+                SizedBox(
+                  width: 15,
+                ),
+                Text("$count"),
+                SizedBox(
+                  width: 15,
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    setState(() {
+                      count--;
+                    });
+                  },
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Color.fromARGB(255, 165, 237, 233)),
+                  child: Icon(Icons.remove),
+                ),
+              ],
             ),
           ],
         ),
@@ -212,7 +238,7 @@ class CheckOut extends StatelessWidget {
         Row(
           children: [
             Padding(
-              padding: const EdgeInsets.all(48.0),
+              padding: const EdgeInsets.only(left: 195, top: 110),
               child: ElevatedButton(
                 onPressed: () {
                   Navigator.push(
@@ -234,27 +260,6 @@ class CheckOut extends StatelessWidget {
             SizedBox(
               width: 80,
             ),
-            Container(
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: Color.fromARGB(255, 181, 234, 233)),
-                // color: Colors.amber,
-                child: Row(
-                  children: [
-                    IconButton(
-                        onPressed: () {},
-                        icon: Icon(
-                          Icons.add,
-                          color: Colors.black,
-                        )),
-                    IconButton(
-                        onPressed: () {},
-                        icon: Icon(
-                          Icons.remove,
-                          color: Colors.black,
-                        )),
-                  ],
-                ))
           ],
         )
       ]),
