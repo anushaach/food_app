@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_app/screens/card.dart';
 
 class Payment extends StatefulWidget {
   const Payment({super.key});
@@ -169,7 +170,13 @@ class _PaymentState extends State<Payment> {
                 ],
               ),
               ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => Atmcard(),
+                        ));
+                  },
                   style: ElevatedButton.styleFrom(
                       backgroundColor: Color.fromARGB(255, 103, 222, 235),
                       shape: BeveledRectangleBorder(

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:food_app/screens/card.dart';
+import 'package:food_app/screens/date_and_time_picker.dart';
 import 'package:food_app/screens/firstpage.dart';
 import 'package:food_app/screens/splash_screen.dart';
 
@@ -11,9 +13,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: FirstPage(),
-    );
+    return MaterialApp(debugShowCheckedModeBanner: false, home: FirstPage());
   }
 }

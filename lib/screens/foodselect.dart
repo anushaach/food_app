@@ -225,6 +225,7 @@ class FoodSelect extends StatelessWidget {
                 SizedBox(
                   width: 270,
                 ),
+                // Spacer(),
                 Text(
                   "+Rs 150",
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
