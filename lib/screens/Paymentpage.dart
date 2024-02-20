@@ -169,19 +169,102 @@ class _PaymentState extends State<Payment> {
                   // onPressed: () {}, child: Image.asset('iamge/eswea.png'))
                 ],
               ),
-              ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => Atmcard(),
-                        ));
-                  },
-                  style: ElevatedButton.styleFrom(
-                      backgroundColor: Color.fromARGB(255, 103, 222, 235),
-                      shape: BeveledRectangleBorder(
-                          borderRadius: BorderRadius.circular(10))),
-                  child: Text("Order Now"))
+              Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => Atmcard(),
+                            ));
+                      },
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Color.fromARGB(255, 103, 222, 235),
+                          shape: BeveledRectangleBorder(
+                              borderRadius: BorderRadius.circular(10))),
+                      child: Text("Order Now"),
+                    ),
+                  ),
+                  Spacer(),
+                  ElevatedButton(
+                    onPressed: () async {
+                      DateTime? datePicked = await showDatePicker(
+                          context: context,
+                          initialDate: DateTime.now(),
+                          firstDate: DateTime(2021),
+                          lastDate: DateTime(2029));
+                      if (datePicked != null) {
+                        print(
+                            'Date Select :${datePicked.day}-${datePicked.month}-${datePicked.year}');
+                      }
+                    },
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Color.fromARGB(255, 103, 222, 235),
+                        shape: BeveledRectangleBorder(
+                            borderRadius: BorderRadius.circular(10))),
+                    child: Text("Show Date"),
+                  ),
+                  Spacer(),
+                  ElevatedButton(
+                    onPressed: () async {
+                      // Show Date Picker
+                      DateTime? datePicked = await showDatePicker(
+                        context: context,
+                        initialDate: DateTime.now(),
+                        firstDate: DateTime(2021),
+                        lastDate: DateTime(2029),
+                      );
+
+                      if (datePicked != null) {
+                        TimeOfDay? timePicked = await showTimePicker(
+                          context: context,
+                          initialTime: TimeOfDay.now(),
+                        );
+
+                        if (timePicked != null) {
+                          DateTime selectedDateTime = DateTime(
+                            datePicked.year,
+                            datePicked.month,
+                            datePicked.day,
+                            timePicked.hour,
+                            timePicked.minute,
+                          );
+
+                          print('Selected DateTime: $selectedDateTime');
+                        }
+                      }
+                    },
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Color.fromARGB(255, 103, 222, 235),
+                        shape: BeveledRectangleBorder(
+                            borderRadius: BorderRadius.circular(10))),
+                    child: Text("Select Date and Time"),
+                  )
+
+                  // ElevatedButton(
+                  //   onPressed: () async {
+
+                  //     DateTime? datePicked = await showDatePicker(
+                  //         context: context,
+                  //         initialDate: DateTime.now(),
+                  //         firstDate: DateTime(2021),
+                  //         lastDate: DateTime(2029));
+                  //     if (datePicked != null) {
+                  //       print(
+                  //           'Date Select :${datePicked.day}-${datePicked.month}-${datePicked.year}');
+                  //     }
+                  //   },
+                  //   style: ElevatedButton.styleFrom(
+                  //       backgroundColor: Color.fromARGB(255, 103, 222, 235),
+                  //       shape: BeveledRectangleBorder(
+                  //           borderRadius: BorderRadius.circular(10))),
+                  //   child: Text("Show Time"),
+                  // ),
+                ],
+              ),
             ],
           ),
         ),
